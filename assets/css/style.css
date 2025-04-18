@@ -36,7 +36,7 @@
 /* custom bootstrap colors */
 
 .bg-primary {
-  background-color: var(--da-theme-color) !important;
+  background-color: var(--primary-color) !important;
 }
 
 /*  body start */
@@ -183,6 +183,46 @@ button.da-btn {
 }
 /* logo */
 
+/* mobile menu css start */
+.mobile-menu-container {
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: var(--primary-color);
+  display: none;
+}
+
+.mobile-link-container ul li {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.mobile-link-container ul li a {
+  color: #fff;
+}
+
+.mobile-menu-logo-container {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+}
+
+.mobile-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mobile-logo img {
+  max-width: 125px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* end of mobile menu css */
+
 /* header section css start */
 .da-header-wrapper {
   position: absolute;
@@ -284,15 +324,6 @@ button.da-btn {
   bottom: 0;
   left: 0;
   z-index: -1;
-  animation: 4s topbottom linear infinite;
-}
-@keyframes topbottom {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
 }
 
 .da-top-heading-div {
@@ -1234,7 +1265,7 @@ button.da-btn {
     margin-right: 30px;
   }
   .da-banner-wrapper {
-    padding: 150px 0 80px 0;
+    padding: 250px 0 80px 0;
   }
   .da-banner-right {
     padding: 0px 0 0 0;
@@ -1444,7 +1475,7 @@ button.da-btn {
     display: none;
   }
   .da-banner-wrapper {
-    padding: 100px 0 50px 0;
+    padding: 250px 0 50px 0;
   }
 
   .key-name {
@@ -1455,6 +1486,10 @@ button.da-btn {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     text-align: center;
+  }
+
+  .da-brand-logo a img {
+    max-width: 125px;
   }
 }
 
@@ -1498,6 +1533,14 @@ button.da-btn {
 
   .da-activity-box {
     height: 489px;
+  }
+
+  .da-brand-logo a img {
+    max-width: 100px;
+  }
+
+  .da-toggle-btn {
+    top: 57px;
   }
 }
 @media (max-width: 575px) {
@@ -1545,7 +1588,7 @@ button.da-btn {
     position: relative;
   }
   .da-brand-logo a img {
-    max-width: 200px;
+    max-width: 100px;
     height: auto;
   }
   .da-banner-right img {
