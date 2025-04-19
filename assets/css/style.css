@@ -47,7 +47,7 @@ body {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
   word-break: break-word;
 }
 html {
@@ -87,6 +87,7 @@ h6 {
   word-break: break-word;
 
   font-family: "Merriweather", serif;
+  color: var(--primary-color);
 }
 img {
   max-width: 100%;
@@ -154,7 +155,8 @@ p {
   font-weight: 500;
   color: var(--button-text-color);
   text-transform: capitalize;
-  background-color: var(--button-bg);
+  background-color: var(--button-hover-bg);
+  border: 1px solid #fff;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
@@ -163,11 +165,11 @@ p {
 }
 
 .da-btn:hover {
-  background: var(--button-hover-bg);
+  background: var(--button-bg);
   color: var(--button-text-color);
 
   transform: scale(1.02);
-  box-shadow: 5px 5px 15px #b6465f;
+  /* box-shadow: 5px 5px 15px #b6465f; */
 }
 button.da-btn {
   border: none;
@@ -308,22 +310,13 @@ button.da-btn {
 /* header section css end */
 /* banner section css start */
 .da-banner-wrapper {
-  background-color: var(--background-light);
+  background: linear-gradient(#572a31c0, #572a3193),
+    url("../../crhs_assets/school_entrance.png") center center;
+  background-size: cover;
+  background-attachment: fixed;
   padding: 250px 0;
   position: relative;
   z-index: 1;
-}
-.da-banner-wrapper::before {
-  content: "";
-  background-image: url(../images/banner-bg-shape.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  top: 10px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
 }
 
 .da-top-heading-div {
@@ -379,6 +372,15 @@ button.da-btn {
 .da-banner-right {
   text-align: right;
 }
+
+.tag-line {
+  font-family: tangerine, cursive;
+  font-size: 48px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
 /* banner section css end */
 
 /* key members section */
@@ -406,6 +408,12 @@ button.da-btn {
   padding: 8px;
 
   transform: translate(-20px, -20px);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover img {
+  transform: translate(-10px, -10px);
+  padding: 0;
 }
 
 .card-img-container {
@@ -435,7 +443,7 @@ button.da-btn {
 
 /* partner section css start */
 .da-partner-wrapper {
-  background-color: var(--background-dark);
+  background-color: var(--background-light);
   padding-top: 80px;
   width: 100%;
 }
@@ -473,12 +481,13 @@ button.da-btn {
 
 .our-mission {
   background-color: var(--background-dark);
+  padding: 80px 0;
 }
 
 .our-mission-para {
   font-size: 20px;
   line-height: 36px;
-  word-spacing: 2px;
+  /* word-spacing: 2px; */
   color: var(--maroon);
   font-weight: 400;
   /* max-width: 520px; */
@@ -563,9 +572,9 @@ button.da-btn {
   font-weight: 700;
 }
 .da-about-left-img img {
-  max-width: 556px;
-  height: 544px;
-  object-fit: contain;
+  max-width: 456px;
+  /* height: 544px; */
+  object-fit: cover;
   animation: 4s topbottom linear infinite;
 }
 .da-about-right .da-heading {
@@ -582,7 +591,7 @@ button.da-btn {
 /* activity section css start */
 .da-activity-wrapper {
   padding: 80px 0;
-  background-color: var(--background-dark);
+  background-color: var(--background-light);
   width: 100%;
 }
 
@@ -599,7 +608,7 @@ button.da-btn {
   transition: all 0.8s;
 }
 .da-activity-box {
-  background: var(--background-dark);
+  background: var(--background-light);
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 20px;
@@ -674,11 +683,168 @@ button.da-btn {
   height: 10px;
   object-fit: contain;
 }
+
+.key-activity-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.section-sub-heading {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+/* plannned activities */
+.owl-prev,
+.owl-next {
+  background: var(--button-bg) !important;
+  color: white !important;
+  padding: 10px 15px;
+  border-radius: 50%;
+  margin: 5px;
+  transition: background 0.3s ease;
+
+  width: 30px;
+  height: 30px;
+  margin-top: 20px;
+}
+
+.owl-prev:hover,
+.owl-next:hover {
+  background: var(--button-hover-bg) !important;
+}
+
+.fancybox__toolbar,
+.fancybox__footer {
+  background-color: var(--primary-color);
+}
+
+.fancybox__button {
+  background: var(--button-bg) !important;
+  color: white !important;
+}
+
+.fancybox__button:hover {
+  background: var(--button-hover-bg) !important;
+}
+/* end of planned activities */
+
+/* conference key dates */
+
+.focus-area-list .list-group-item {
+  background-color: var(--background-dark) !important;
+}
+
+/* Timeline Styles */
+.timeline-section {
+  background: var(--background-dark);
+  padding: 1rem 1rem;
+}
+
+.section-heading {
+  text-align: center;
+  font-family: var(--heading-font);
+  /* font-size: 2.5rem; */
+  color: var(--section-heading-color);
+  /* margin-bottom: 3rem; */
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 700px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 4px;
+  height: 100%;
+  background: var(--primary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 60px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-date {
+  font-family: var(--body-font);
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+  background: var(--background-light);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  font-family: var(--heading-font);
+  color: var(--section-heading-color);
+
+  font-size: 1.25rem;
+}
+
+.timeline-content p {
+  font-family: var(--body-font);
+  color: #333;
+}
+
+.timeline-link {
+  color: var(--button-bg);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.timeline-link:hover {
+  color: var(--button-hover-bg);
+}
+
 /* activity section css end */
+
+/* resources section */
+
+.resources-section {
+  background-color: var(--background-light);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--accent-color) !important;
+  color: #fff;
+  font-weight: 700;
+}
+
+.accordion-button {
+  background-color: var(--button-hover-bg) !important;
+  color: #fff;
+  font-weight: 700;
+}
+
+.accordion-button::after {
+  filter: brightness(0) invert(1); /* turns it white */
+}
+
+/* end of research section */
 
 /* why choose us section css start */
 .da-choose-wrapper {
-  background-color: var(--background-light);
+  background-color: var(--background-dark);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -906,8 +1072,6 @@ button.da-btn {
   width: 80px;
   height: auto;
   object-fit: contain;
-  filter: sepia(1) saturate(500%) hue-rotate(-50deg) brightness(70%)
-    contrast(90%);
 }
 .da-project-content h4 {
   font-size: 16px;
@@ -931,7 +1095,7 @@ button.da-btn {
 /* blog section css start */
 .da-blog-wrapper {
   padding: 80px 0;
-  background-color: var(--background-light);
+  background-color: var(--background-dark);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1235,7 +1399,7 @@ button.da-btn {
 @media (min-width: 992px) {
   .da-header-wrapper.da-header-fixed {
     position: fixed;
-    background-color: #572a31cf;
+    background-color: #572a31;
     backdrop-filter: blur(5px);
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
     -webkit-animation: slideInDown 0.7s;
@@ -1443,9 +1607,7 @@ button.da-btn {
   .da-service-img {
     text-align: center;
   }
-  .da-service-img img {
-    max-width: 100%;
-  }
+
   .da-count > span {
     width: 85px;
     height: 85px;
