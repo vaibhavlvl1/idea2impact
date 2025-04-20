@@ -39,6 +39,10 @@
   background-color: var(--primary-color) !important;
 }
 
+.maroonify {
+  /* filter: invert(30%) sepia(80%) saturate(400%) hue-rotate(-40deg); */
+}
+
 /*  body start */
 
 body {
@@ -49,6 +53,7 @@ body {
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
   word-break: break-word;
+  position: relative;
 }
 html {
   scroll-behavior: smooth;
@@ -181,7 +186,10 @@ button.da-btn {
   display: none;
 }
 .da-toggle-btn {
-  display: none;
+  /* display: none; */
+  position: fixed !important;
+  top: 20px;
+  right: 20px;
 }
 /* logo */
 
@@ -192,14 +200,14 @@ button.da-btn {
   width: 100%;
   height: 100%;
   top: 0;
-  left: 0;
-  z-index: 99;
-  background-color: var(--primary-color);
-  display: none;
+  left: -100%;
+  z-index: 98;
+  background-color: #572a3199;
+  transition: all 0.3s ease;
 }
 
 .mobile-link-container ul li {
-  background-color: var(--primary-color);
+  background-color: transparent;
   color: #fff;
 }
 .mobile-link-container ul li a {
@@ -234,6 +242,7 @@ button.da-btn {
   margin: auto;
   z-index: 9;
   background-color: var(--navbar-bg);
+  transition: all 0.3s ease;
 }
 .da-header-inner {
   display: flex;
@@ -695,12 +704,15 @@ button.da-btn {
   text-align: center;
   font-weight: 600;
   margin-bottom: 40px;
+  font-size: 25px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 /* plannned activities */
 .owl-prev,
 .owl-next {
-  background: var(--button-bg) !important;
+  background: var(--button-hover-bg) !important;
   color: white !important;
   padding: 10px 15px;
   border-radius: 50%;
@@ -710,11 +722,6 @@ button.da-btn {
   width: 30px;
   height: 30px;
   margin-top: 20px;
-}
-
-.owl-prev:hover,
-.owl-next:hover {
-  background: var(--button-hover-bg) !important;
 }
 
 .fancybox__toolbar,
@@ -787,7 +794,7 @@ button.da-btn {
 }
 
 .timeline-content {
-  background: var(--background-light);
+  background: var(--button-hover-bg);
   padding: 1rem 1.5rem;
   border-radius: 0.75rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -795,25 +802,24 @@ button.da-btn {
 
 .timeline-content h3 {
   margin-top: 0;
-  font-family: var(--heading-font);
-  color: var(--section-heading-color);
+  /* font-family: var(--heading-font); */
+  color: #fff;
 
   font-size: 1.25rem;
 }
 
 .timeline-content p {
-  font-family: var(--body-font);
-  color: #333;
+  color: #fff;
 }
 
 .timeline-link {
-  color: var(--button-bg);
   font-weight: bold;
   text-decoration: underline;
+  color: #fff;
 }
 
 .timeline-link:hover {
-  color: var(--button-hover-bg);
+  color: var(--navlink-hover-color);
 }
 
 /* activity section css end */
@@ -825,7 +831,7 @@ button.da-btn {
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: var(--accent-color) !important;
+  background-color: var(--button-hover-bg) !important;
   color: #fff;
   font-weight: 700;
 }
@@ -896,6 +902,12 @@ button.da-btn {
   justify-content: center;
   align-items: center;
 }
+.da-choose-box span img {
+  height: 50px;
+  width: 50px;
+  filter: invert();
+}
+
 .da-choose-box h4 {
   font-size: 16px;
   font-weight: 600;
@@ -1052,6 +1064,16 @@ button.da-btn {
   background-position: center;
   width: 100%;
 }
+
+.da-project-wrapper-2 {
+  padding: 80px 0;
+  background-color: var(--background-dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
 .da-project-wrapper .da-activity-heading {
   max-width: 370px;
 }
@@ -1400,17 +1422,13 @@ button.da-btn {
   .da-header-wrapper.da-header-fixed {
     position: fixed;
     background-color: #572a31;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
-    -webkit-animation: slideInDown 0.7s;
-    -moz-animation: slideInDown 0.7s;
-    -ms-animation: slideInDown 0.7s;
-    -o-animation: slideInDown 0.7s;
-    animation: slideInDown 0.7s;
+
     top: 0;
     left: 0;
     right: 0;
     z-index: 9;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 }
 @media (max-width: 1550px) {
@@ -1426,7 +1444,7 @@ button.da-btn {
 }
 @media (max-width: 1199px) {
   .da-navbar-menu ul li {
-    margin-right: 30px;
+    margin-right: 10px;
   }
   .da-banner-wrapper {
     padding: 250px 0 80px 0;
@@ -1438,8 +1456,8 @@ button.da-btn {
     max-width: 100%;
   }
   .da-about-left-img img {
-    max-width: 100%;
-    width: 100%;
+    max-width: 400px;
+    /* width: 100%; */
     height: auto;
   }
   .da-blog-footer span:nth-child(2) {
@@ -1661,8 +1679,8 @@ button.da-btn {
     max-width: 50%;
   }
   .da-about-left-img img {
-    max-width: 100%;
-    width: 100%;
+    max-width: 350px;
+    /* width: 100%; */
     height: auto;
   }
   .da-choose-box {
@@ -1720,9 +1738,9 @@ button.da-btn {
     display: block;
   }
   .da-about-left-img img {
-    width: 100%;
+    /* width: 100%; */
     height: auto;
-    max-width: 500px;
+    max-width: 250px;
   }
   .da-header-right {
     display: none;
@@ -1790,7 +1808,7 @@ button.da-btn {
     padding-top: 50px;
   }
   .da-about-left-img img {
-    max-width: 400px;
+    max-width: 150px;
   }
   .da-about-right {
     margin-top: 0;
