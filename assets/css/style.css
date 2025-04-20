@@ -709,6 +709,18 @@ button.da-btn {
   text-underline-offset: 5px;
 }
 
+.conference-span {
+  width: 40px !important;
+  height: 40px !important;
+  padding: 5px !important;
+}
+
+.conference-span img {
+  max-width: 30px !important;
+  height: 30px !important;
+  object-fit: contain;
+}
+
 /* plannned activities */
 .owl-prev,
 .owl-next {
@@ -1102,16 +1114,16 @@ button.da-btn {
   padding: 17px;
 }
 
+.box-container-span img {
+  max-width: 50px;
+  height: 50px;
+  filter: invert(1);
+}
+
 .box-container {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.da-project-box span img {
-  max-width: 50px;
-  height: 50px;
-  filter: invert(1);
 }
 
 .da-project-content h4 {
