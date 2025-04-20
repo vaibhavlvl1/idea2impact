@@ -908,7 +908,7 @@ button.da-btn {
 .da-choose-box span {
   height: 70px;
   width: 70px;
-  background-color: var(--da-theme-color);
+  background-color: var(--button-hover-bg);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -1105,7 +1105,7 @@ button.da-btn {
 .box-container-span {
   height: 70px;
   width: 70px;
-  background-color: var(--da-theme-color);
+  background-color: var(--button-hover-bg);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -1290,8 +1290,6 @@ button.da-btn {
 /* footer section css start */
 
 .creator {
-  position: absolute;
-  right: 20px !important;
 }
 
 .da-footer-wrapper {
@@ -1399,13 +1397,14 @@ button.da-btn {
 .da-copyright-wrapper {
   background-color: var(--primary-color);
   border-top: #fff 1px solid;
+  padding: 20px 0px;
 }
 .da-copyright-wrapper p {
   font-size: 13px;
   color: var(--da-white-color);
   font-weight: 300;
   text-align: center;
-  padding: 15px 0;
+  padding: 0;
 }
 .da-copyright-wrapper a {
   color: #fff;
