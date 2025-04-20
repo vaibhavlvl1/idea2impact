@@ -413,7 +413,7 @@ button.da-btn {
   width: 160px;
   height: 160px;
   position: relative;
-  background-color: var(--background-dark);
+  background-color: var(--background-light);
   padding: 8px;
 
   transform: translate(-20px, -20px);
@@ -600,7 +600,7 @@ button.da-btn {
 /* activity section css start */
 .da-activity-wrapper {
   padding: 80px 0;
-  background-color: var(--background-light);
+  background-color: var(--background-dark);
   width: 100%;
 }
 
@@ -617,7 +617,7 @@ button.da-btn {
   transition: all 0.8s;
 }
 .da-activity-box {
-  background: var(--background-light);
+  background: var(--background-dark);
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 20px;
@@ -858,8 +858,8 @@ button.da-btn {
   width: 100%;
 }
 .da-choose-img img {
-  max-width: 560px;
-  height: 470px;
+  max-width: 300px;
+
   object-fit: contain;
   animation: 4s topbottom linear infinite;
 }
@@ -1058,7 +1058,7 @@ button.da-btn {
 /* project section css start */
 .da-project-wrapper {
   padding: 80px 0;
-  background-color: var(--background-dark);
+  background-color: var(--background-light);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1078,7 +1078,7 @@ button.da-btn {
   max-width: 370px;
 }
 .da-project-box {
-  background: var(--background-dark);
+  background: var(--background-light);
   border-radius: 20px;
   text-align: center;
   padding: 30px;
@@ -1090,11 +1090,30 @@ button.da-btn {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
 }
 
-.da-project-img img {
-  width: 80px;
-  height: auto;
-  object-fit: contain;
+.box-container-span {
+  height: 70px;
+  width: 70px;
+  background-color: var(--da-theme-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  padding: 17px;
 }
+
+.box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.da-project-box span img {
+  max-width: 50px;
+  height: 50px;
+  filter: invert(1);
+}
+
 .da-project-content h4 {
   font-size: 16px;
   font-weight: 600;
@@ -1755,7 +1774,7 @@ button.da-btn {
     text-align: center;
   }
   .da-choose-img img {
-    max-width: 400px;
+    max-width: 250px;
     height: auto;
   }
 }
@@ -1784,7 +1803,7 @@ button.da-btn {
     width: 20px;
   }
   .da-choose-img img {
-    max-width: 300px;
+    max-width: 200px;
   }
   .da-heading {
     font-size: 25px;
